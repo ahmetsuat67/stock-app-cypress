@@ -90,6 +90,7 @@ const RegisterForm = ({
             helperText={errors.email}
           />
           <TextField
+            data-test="password"
             label="password"
             name="password"
             id="password"
