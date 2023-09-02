@@ -74,8 +74,8 @@ const MenuListItems = () => {
             }}
           >
             <ListItemButton>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.title} />
+              <ListItemIcon data-test={"icon"+item.icon} >{item.icon}</ListItemIcon>
+              <ListItemText data-test={"title"+item.title} primary={item.title} />
             </ListItemButton>
           </ListItem>
         ))}
