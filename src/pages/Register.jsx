@@ -47,6 +47,7 @@ const Register = () => {
             align="center"
             mb={2}
             color="secondary.light"
+            data-test="registerHeader"
           >
             Register
           </Typography>
