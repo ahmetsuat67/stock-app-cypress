@@ -113,7 +113,7 @@ const Login = () => {
           </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2 }}>
-            <Link to="/register">Don't you have an account?</Link>
+            <Link data-test="registerLink" to="/register">Don't you have an account?</Link>
           </Box>
         </Grid>
 
