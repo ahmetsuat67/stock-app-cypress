@@ -26,7 +26,7 @@ const Register = () => {
         }}
       >
         <Grid item xs={12}>
-          <Typography data-test="stockApp" variant="h3" color="primary" align="center">
+          <Typography data-test="stockHeader" variant="h3" color="primary" align="center">
             STOCK APP
           </Typography>
         </Grid>
@@ -43,11 +43,11 @@ const Register = () => {
             <LockIcon size="30" />
           </Avatar>
           <Typography
+            data-test="registerHeader"
             variant="h4"
             align="center"
             mb={2}
             color="secondary.light"
-            data-test="registerHeader"
           >
             Register
           </Typography>
@@ -69,14 +69,14 @@ const Register = () => {
             component={(props) => <RegisterForm {...props} />}
           ></Formik>
 
-          <Box sx={{ textAlign: "center", mt: 2 }}>
-            <Link to="/">Do you have an account?</Link>
+          <Box data-test="loginLink" sx={{ textAlign: "center", mt: 2 }}>
+            <Link  to="/">Do you have an account?</Link>
           </Box>
         </Grid>
 
         <Grid item xs={0} sm={7} md={6}>
           <Container>
-            <img src={image} alt="" />
+            <img data-test="registerImg" src={image} alt="" />
           </Container>
         </Grid>
       </Grid>

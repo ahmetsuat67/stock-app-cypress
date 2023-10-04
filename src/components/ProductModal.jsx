@@ -33,30 +33,30 @@ export default function ProductModal({ open, handleClose }) {
       <Modal
         open={open}
         onClose={() => {
-          setInfo({ name: "", category_id: "", brand_id: "" })
-          handleClose()
+          setInfo({ name: "", category_id: "", brand_id: "" });
+          handleClose();
         }}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+        aria-describedby="modal-modal-description">
         <Box sx={modalStyle}>
           <Box
             sx={{ display: "flex", flexDirection: "column", gap: 2 }}
             component="form"
-            onSubmit={handleSubmit}
-          >
+            onSubmit={handleSubmit}>
             <FormControl fullWidth>
-              <InputLabel id="category">Categories</InputLabel>
+              <InputLabel data-test="productsCat" id="category">
+                Categories
+              </InputLabel>
               <Select
+                data-test="selectCat"
                 labelId="category"
                 id="category"
                 name="category_id"
                 value={info?.category_id || ""}
                 label="category"
-                onChange={handleChange}
-              >
+                onChange={handleChange}>
                 {categories?.map(({ id, name }) => (
-                  <MenuItem key={id} value={id}>
+                  <MenuItem data-test={name} key={id} value={id}>
                     {name}
                   </MenuItem>
                 ))}
@@ -64,17 +64,19 @@ export default function ProductModal({ open, handleClose }) {
             </FormControl>
 
             <FormControl fullWidth>
-              <InputLabel id="brand">Brands</InputLabel>
+              <InputLabel id="brand" data-test="productsBrands">
+                Brands
+              </InputLabel>
               <Select
                 labelId="brand"
+                data-test="selectBrand"
                 id="brand"
                 name="brand_id"
                 value={info?.brand_id || ""}
                 label="brand"
-                onChange={handleChange}
-              >
+                onChange={handleChange}>
                 {brands?.map(({ id, name }) => (
-                  <MenuItem key={id} value={id}>
+                  <MenuItem key={id} value={id} data-test={name}>
                     {name}
                   </MenuItem>
                 ))}
@@ -85,18 +87,19 @@ export default function ProductModal({ open, handleClose }) {
               name="name"
               id="name"
               type="text"
+              data-test="productsName"
               variant="outlined"
               value={info?.name || ""}
               required
               onChange={handleChange}
             />
 
-            <Button variant="contained" type="submit">
+            <Button variant="contained" type="submit" data-test="productsSbmt">
               Submit
             </Button>
           </Box>
         </Box>
       </Modal>
     </div>
-  )
+  );
 }

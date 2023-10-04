@@ -25,6 +25,7 @@ export default function ProductTable() {
       headerAlign: "center",
       align: "center",
       minWidth: 80,
+      datatestId:"catTitle"
     },
     {
       field: "brand",
@@ -60,6 +61,7 @@ export default function ProductTable() {
           icon={<DeleteForeverIcon />}
           label="Delete"
           sx={btnStyle}
+          data-test={'deleteBtn'+ props.id}
           onClick={() => deleteStockData("products", props.id)}
         />,
       ],

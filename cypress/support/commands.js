@@ -35,4 +35,3 @@ Cypress.Commands.add("login",() => {
             .click({ force: true });
         cy.url().should("include", "/stock");
     });
-    

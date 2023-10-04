@@ -25,10 +25,10 @@ const Products = () => {
 
   return (
     <div>
-      <Typography variant="h4" color={"error"} mb={3}>
+      <Typography data-test="productsHeader" variant="h4" color={"error"} mb={3}>
         Products
       </Typography>
-      <Button variant="contained" onClick={handleOpen}>
+      <Button data-test="productsBtn" variant="contained" onClick={handleOpen}>
         NEW PRODUCT
       </Button>
 

@@ -23,7 +23,7 @@ const Charts = () => {
     <Grid container justifyContent="center" spacing={3} mt={4}>
       <Grid item xs={12} md={6}>
         <Card>
-          <Title>Total Sales</Title>
+          <Title data-test="chartsSales">Total Sales</Title>
           <LineChart
             className="mt-4"
             data={salesData}
@@ -37,7 +37,7 @@ const Charts = () => {
 
       <Grid item xs={12} md={6}>
         <Card>
-          <Title>Total Purchases</Title>
+          <Title data-test="chartsPurchases">Total Purchases</Title>
           <LineChart
             className="mt-4"
             data={purchasesData}

@@ -22,9 +22,10 @@ const BrandCard = ({ brand, setOpen, setInfo }) => {
         flexDirection: "column",
       }}
     >
-      <CardHeader title={brand?.name} />
+      <CardHeader data-test="brandsCardName" title={brand?.name} />
 
       <CardMedia
+        data-test="brandsCardImage"
         image={brand?.image}
         sx={{ p: 1, objectFit: "contain", height: "250px" }}
         component="img"
@@ -33,6 +34,7 @@ const BrandCard = ({ brand, setOpen, setInfo }) => {
 
       <CardActions sx={flex}>
         <EditIcon
+          data-test="editBtn"
           sx={btnStyle}
           onClick={() => {
             setInfo(brand)
@@ -40,6 +42,7 @@ const BrandCard = ({ brand, setOpen, setInfo }) => {
           }}
         />
         <DeleteOutlineIcon
+          data-test="deleteBtn"
           sx={btnStyle}
           onClick={() => deleteStockData("brands", brand.id)}
         />

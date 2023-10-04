@@ -29,10 +29,11 @@ const Sales = () => {
   }, []) // eslint-disable-line
   return (
     <div>
-      <Typography variant="h4" color="error" mb={3}>
+      <Typography data-test='salesHeader' variant="h4" color="error" mb={3}>
         Sales
       </Typography>
       <Button
+        data-test='salesBtn'
         variant="contained"
         sx={{ marginBottom: "1rem" }}
         onClick={() => setOpen(true)}

@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <div>
-      <Typography variant="h4" color="error" mb={2}>
+      <Typography data-test="dashboardHeader" variant="h4" color="error" mb={2}>
         Dashboard
       </Typography>
 

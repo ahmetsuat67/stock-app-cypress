@@ -18,11 +18,12 @@ const Brands = () => {
 
   return (
     <Box>
-      <Typography variant="h4" color="error" mb={2}>
+      <Typography data-test="brandsHeader" variant="h4" color="error" mb={2}>
         Brands
       </Typography>
 
       <Button
+        data-test="brandsBtn"
         variant="contained"
         onClick={() => {
           setInfo({})

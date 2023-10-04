@@ -38,6 +38,7 @@ export default function BrandModal({ open, setOpen, info, setInfo }) {
       <Box sx={modalStyle}>
         <Box sx={flexColumn} component={"form"} onSubmit={handleSubmit}>
           <TextField
+            data-test="brandsName"
             label="Brand Name"
             name="name"
             id="name"
@@ -49,6 +50,7 @@ export default function BrandModal({ open, setOpen, info, setInfo }) {
           />
 
           <TextField
+            data-test="brandsImage"
             label="Image Url"
             name="image"
             id="image"
@@ -58,7 +60,7 @@ export default function BrandModal({ open, setOpen, info, setInfo }) {
             onChange={handleChange}
           />
 
-          <Button type="submit" variant="contained" size="large">
+          <Button data-test="brandsSbmt" type="submit" variant="contained" size="large">
             Save Brand
           </Button>
         </Box>

@@ -48,10 +48,11 @@ export default function SaleModal({ open, handleClose, info, setInfo }) {
             onSubmit={handleSubmit}
           >
             <FormControl>
-              <InputLabel variant="outlined" id="brand-select-label">
+              <InputLabel data-test='salesBrand' variant="outlined" id="brand-select-label">
                 Brand
               </InputLabel>
               <Select
+                data-test="selectBrand"
                 labelId="brand-select-label"
                 label="Brand"
                 id="brand-select"
@@ -66,7 +67,7 @@ export default function SaleModal({ open, handleClose, info, setInfo }) {
                 <hr />
                 {brands?.map((item) => {
                   return (
-                    <MenuItem key={item.id} value={item.id}>
+                    <MenuItem data-test="brandName" key={item.id} value={item.id}>
                       {item.name}
                     </MenuItem>
                   )
@@ -74,10 +75,11 @@ export default function SaleModal({ open, handleClose, info, setInfo }) {
               </Select>
             </FormControl>
             <FormControl>
-              <InputLabel variant="outlined" id="product-select-label">
+              <InputLabel data-test='salesProduct' variant="outlined" id="product-select-label">
                 Product
               </InputLabel>
               <Select
+                data-test="selectProduct"
                 labelId="product-select-label"
                 label="Product"
                 id="product-select"
@@ -92,7 +94,7 @@ export default function SaleModal({ open, handleClose, info, setInfo }) {
                 <hr />
                 {products?.map((item) => {
                   return (
-                    <MenuItem key={item.id} value={item.id}>
+                    <MenuItem data-test="productName" key={item.id} value={item.id}>
                       {item.name}
                     </MenuItem>
                   )
@@ -105,6 +107,7 @@ export default function SaleModal({ open, handleClose, info, setInfo }) {
               name="quantity"
               type="number"
               variant="outlined"
+              data-test="quantityName"
               InputProps={{ inputProps: { min: 0 } }}
               value={info?.quantity || ""}
               onChange={handleChange}
@@ -115,13 +118,14 @@ export default function SaleModal({ open, handleClose, info, setInfo }) {
               id="price"
               type="number"
               variant="outlined"
+              data-test="priceName"
               name="price"
               InputProps={{ inputProps: { min: 0 } }}
               value={info?.price || ""}
               onChange={handleChange}
               required
             />
-            <Button type="submit" variant="contained" size="large">
+            <Button data-test="salesSbmt" type="submit" variant="contained" size="large">
               {info?.id ? "Update Sale" : "Add New Sale"}
             </Button>
           </Box>

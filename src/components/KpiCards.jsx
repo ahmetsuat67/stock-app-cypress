@@ -58,6 +58,7 @@ const KpiCards = () => {
             elevation={5}
           >
             <Avatar
+              data-test={"avatar"+ item.icon}
               sx={{
                 bgcolor: item.bgColor,
                 color: item.color,
@@ -69,10 +70,10 @@ const KpiCards = () => {
             </Avatar>
 
             <Box>
-              <Typography variant="button" mb={2}>
+              <Typography data-test={"title"+ item.title} variant="button" mb={2}>
                 {item.title}
               </Typography>
-              <Typography variant="h4" mb={2}>
+              <Typography data-test="kpiValue" variant="h4" mb={2}>
                 {item.value}
               </Typography>
             </Box>
